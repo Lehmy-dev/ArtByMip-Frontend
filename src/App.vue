@@ -1,12 +1,43 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <button @click="this.navigationExtended = !this.navigationExtended" ></button>
+  <navigation-view v-if="this.navigationExtended"> </navigation-view>
+  <router-view  class="content" :class="{ extendedNavigation : this.navigationExtended }" />
 </template>
 
+<script>
+
+  import NavigationView from './views/NavigationView.vue';
+
+  export default{
+    components:{
+      NavigationView
+    },
+    data() {
+      return {
+        navigationExtended: false,
+      }
+    }
+  }
+
+
+</script>
+
 <style>
+
+
+body{
+  background-color: #FEFCFB;
+}
+
+.content.extendedNavigation{
+  margin-left: 50vw;
+}
+
+.content{
+  background-color: red;
+
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
