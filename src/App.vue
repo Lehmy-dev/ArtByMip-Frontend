@@ -1,5 +1,5 @@
 <template>
-  <button @click="this.navigationExtended = !this.navigationExtended" ></button>
+  <button class="burger" @click="this.navigationExtended = !this.navigationExtended" > click to open navigation </button>
   <navigation-view v-if="this.navigationExtended"> </navigation-view>
   <router-view  class="content" :class="{ extendedNavigation : this.navigationExtended }" />
 </template>
@@ -27,14 +27,17 @@
 
 body{
   background-color: #FEFCFB;
+  top:0px;
+  padding-top: 0px;
+  margin: 0px;
 }
 
 .content.extendedNavigation{
-  margin-left: 50vw;
+  margin-left: 30vw;
 }
 
 .content{
-  background-color: red;
+  top: 0px;
 
 }
 
@@ -46,8 +49,11 @@ body{
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+.burger{
+  position: fixed;
+  z-index: 10;
+  left: 1vw;
+  top: 1vh;
 }
 
 nav a {
