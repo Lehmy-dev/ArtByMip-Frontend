@@ -1,7 +1,11 @@
 <template>
-  <button class="burger" @click="this.navigationExtended = !this.navigationExtended" > click to open navigation </button>
+  <button class="burger" @click="this.navigationExtended = !this.navigationExtended" >  </button>
   <navigation-view v-if="this.navigationExtended"> </navigation-view>
   <router-view  class="content" :class="{ extendedNavigation : this.navigationExtended }" />
+  <div class="app impressum">
+    <router-link to="/Datenschutz">Datenschutz</router-link>
+    <router-link to="/Impressum">Impressum</router-link>
+  </div>
 </template>
 
 <script>
@@ -30,6 +34,21 @@ body{
   top:0px;
   padding-top: 0px;
   margin: 0px;
+  overflow-x: hidden;
+}
+
+.app.impressum{
+  left: 0px;
+  bottom: 0px;
+  position: absolute;
+  display: inline-flex;
+  padding: 1vh;
+  gap: 1vw;
+}
+
+.app.impressum a{
+  color: black;
+  text-decoration: none;
 }
 
 .content.extendedNavigation{
@@ -38,6 +57,8 @@ body{
 
 .content{
   top: 0px;
+
+  overflow-x: hidden;
 
 }
 
@@ -53,7 +74,13 @@ body{
   position: fixed;
   z-index: 10;
   left: 1vw;
-  top: 1vh;
+  top: 1vw;
+  width: 2.5vw;
+  height: 2vw;
+  background-image: url(./assets/burger.svg);
+  background-size: cover;
+  border: 0px;
+  background-color:transparent;
 }
 
 nav a {
