@@ -8,14 +8,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/galery',
-    name: 'galery',
-    component: HomeView
+    path: '/gallery',
+    name: 'gallery',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GalleryView.vue')
   },
   {
     path: '/impressum',
     name: 'impressum',
-    component: HomeView
+    component: () => import(/* webpackChunkName: "about" */ '../views/ImpressView.vue')
   },
 
   {

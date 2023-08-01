@@ -2,7 +2,7 @@
   <div>
     <nav class="navigation container">
         <router-link to="/">Home</router-link> |
-        <router-link to="/galery">Galery</router-link> |
+        <router-link to="/gallery">Galery</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/impressum">impressum</router-link> |
     </nav>
